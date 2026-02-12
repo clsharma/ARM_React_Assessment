@@ -5,7 +5,7 @@ const features = [
   {
     id: 1,
     icon: FaCheckCircle,
-    title: 'DURALUΜ',
+    title: 'DURALUμ',
     subtitle: 'Stronger. Sleeker. Smarter.',
     description: 'Our proprietary aluminium alloy engineered for superior strength and durability',
     benefits: [
