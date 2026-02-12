@@ -1,0 +1,28 @@
+---
+import Layout from '../components/layout/Layout.astro';
+import Hero from '../components/sections/Hero.astro';
+import DesignFeatures from '../components/sections/DesignFeatures';
+import InnovationDiagram from '../components/sections/InnovationDiagram.astro';
+import WhyEternia from '../components/sections/WhyEternia';
+import BeforeAfter from '../components/sections/BeforeAfter';
+import ProjectsGallery from '../components/sections/ProjectsGallery';
+import Testimonials from '../components/sections/Testimonials';
+import ExpertPerformance from '../components/sections/ExpertPerformance';
+import ThoughtfulReads from '../components/sections/ThoughtfulReads';
+import CTASection from '../components/sections/CTASection.astro';
+import FAQ from '../components/sections/FAQ';
+---
+
+<Layout>
+  <Hero />
+  <DesignFeatures client:load />
+  <InnovationDiagram />
+  <WhyEternia client:load />
+  <BeforeAfter client:load />
+  <ProjectsGallery client:load />
+  <Testimonials client:load />
+  <ExpertPerformance client:load />
+  <ThoughtfulReads client:load />
+  <CTASection />
+  <FAQ client:load />
+</Layout>
