@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { AiFillInstagram } from 'react-icons/ai';
 
 const expertGroups = [
   [

@@ -46,14 +46,6 @@ const features = [
 export default function WhyEternia() {
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % features.length);
-  };
-  
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + features.length) % features.length);
-  };
-  
   return (
     <section 
       className="py-16 md:py-20 lg:py-24 text-white relative"

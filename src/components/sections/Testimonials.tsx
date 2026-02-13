@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaArrowLeft, FaArrowRight, FaQuoteLeft } from 'react-icons/fa';
+import { FaQuoteLeft } from 'react-icons/fa';
 
 const testimonials = [
   {
