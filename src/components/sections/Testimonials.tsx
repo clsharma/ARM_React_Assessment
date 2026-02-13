@@ -45,7 +45,6 @@ export default function Testimonials() {
           <div className="w-72 md:w-[420px] h-[1.5px] bg-white mx-auto"></div>
         </div>
         
-        {/* Desktop Carousel - with peek effect */}
         <div className="hidden md:block relative mb-8">
           <div className="overflow-hidden mx-auto" style={{ maxWidth: '1200px' }}>
             <div 
@@ -79,7 +78,6 @@ export default function Testimonials() {
           </div>
         </div>
         
-        {/* Mobile Carousel - single card */}
         <div className="md:hidden relative mb-8">
           <div className="overflow-hidden">
             <div 
@@ -107,7 +105,6 @@ export default function Testimonials() {
           </div>
         </div>
         
-        {/* Navigation Controls */}
         <div className="flex items-center justify-center gap-4 mb-8">
           <button
             onClick={prevSlide}
@@ -117,7 +114,6 @@ export default function Testimonials() {
             <img src="/images/left1.png" alt="Previous" className="w-5 h-5" />
           </button>
           
-          {/* Dots */}
           <div className="flex gap-2">
             {testimonials.map((_, index) => (
               <button

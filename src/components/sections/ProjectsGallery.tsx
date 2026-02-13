@@ -32,7 +32,6 @@ export default function ProjectsGallery() {
   
   return (
     <section className="relative overflow-hidden">
-      {/* Top Section with image6.png background */}
       <div 
         className="relative pt-16 pb-48 bg-cover bg-center"
         style={{ backgroundImage: "url('/images/image6.png')" }}
@@ -48,12 +47,9 @@ export default function ProjectsGallery() {
         </div>
       </div>
 
-      {/* Bottom Section with #003946 background */}
       <div className="relative pt-48 pb-20 md:pb-16" style={{ backgroundColor: '#003946' }}>
-        {/* Cards positioned to overlap both backgrounds */}
         <div className="absolute left-0 right-0 -top-40 z-20 pb-16 md:pb-0">
           <div className="container-custom">
-            {/* Desktop View */}
             <div className="hidden md:block">
               <div className="grid md:grid-cols-4 gap-6 px-4 mb-8">
                 {projects.map((project) => (
@@ -67,7 +63,6 @@ export default function ProjectsGallery() {
                 ))}
               </div>
               
-              {/* Desktop Navigation Arrows */}
               <div className="flex justify-center items-center gap-4">
                 <button
                   onClick={prevSlide}
@@ -77,7 +72,6 @@ export default function ProjectsGallery() {
                   <img src="/images/left1.png" alt="Previous" className="w-5 h-5" />
                 </button>
                 
-                {/* Dots for Desktop */}
                 <div className="flex gap-2">
                   {projects.map((_, index) => (
                     <button
@@ -101,7 +95,6 @@ export default function ProjectsGallery() {
               </div>
             </div>
 
-            {/* Mobile Horizontal Scroll */}
             <div className="md:hidden overflow-x-auto px-4 scrollbar-hide">
               <div className="flex gap-4 pb-4">
                 {projects.map((project) => (

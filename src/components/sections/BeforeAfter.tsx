@@ -10,7 +10,6 @@ export default function BeforeAfter() {
   return (
     <section className="py-12 md:py-20 lg:py-20 bg-white bg-cover bg-center bg-no-repeat relative" style={{ backgroundImage: 'url(/images/image6.png)' }}>
       <div className="container-custom relative z-10">
-        {/* Title with underline */}
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-[40px] font-normal text-[#003946] mb-3 md:mb-4 leading-tight tracking-wide" style={{ fontFamily: 'SF Pro, Inter, sans-serif' }}>
             Where Spaces<br className="md:hidden" /> Come Alive
@@ -18,17 +17,14 @@ export default function BeforeAfter() {
           <div className="w-32 md:w-[400px] h-[1.5px] bg-[#003946] mx-auto"></div>
         </div>
         
-        {/* Before/After Slider Container */}
         <div className="max-w-[1000px] mx-auto px-4">
           <div className="relative overflow-hidden rounded-2xl md:rounded-2xl shadow-xl aspect-[16/10] md:aspect-[21/9]">
-            {/* Before Image */}
             <img 
               src="/images/before.png" 
               alt="Before renovation"
               className="absolute inset-0 w-full h-full object-cover"
             />
             
-            {/* After Image with clip path */}
             <div 
               className="absolute inset-0 overflow-hidden"
               style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
@@ -40,17 +36,14 @@ export default function BeforeAfter() {
               />
             </div>
             
-            {/* Before Label */}
             <div className="absolute top-3 left-3 md:top-5 md:left-5 bg-white/80 backdrop-blur-sm text-[#003946] px-4 md:px-6 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-medium border border-white/50">
               Before
             </div>
             
-            {/* After Label */}
             <div className="absolute top-3 right-3 md:top-5 md:right-5 bg-white/80 backdrop-blur-sm text-[#003946] px-4 md:px-6 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-medium border border-white/50">
               After
             </div>
             
-            {/* Slider Handle */}
             <div 
               className="absolute inset-y-0 w-0.5 md:w-1 bg-white cursor-ew-resize shadow-lg"
               style={{ left: `${sliderPosition}%` }}
@@ -64,7 +57,6 @@ export default function BeforeAfter() {
               </div>
             </div>
             
-            {/* Range Input for dragging */}
             <input
               type="range"
               min="0"
@@ -76,7 +68,6 @@ export default function BeforeAfter() {
             />
           </div>
           
-          {/* View All Link */}
           <div className="text-center mt-6 md:mt-8">
             <a 
               href="#gallery" 

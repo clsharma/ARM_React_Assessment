@@ -4,13 +4,11 @@
 <nav class="fixed top-0 left-0 right-0 z-50 lg:top-6 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:w-[95%] lg:max-w-7xl" id="navbar">
   <div class="bg-white lg:bg-gray-800/70 lg:backdrop-blur-lg lg:rounded-2xl lg:shadow-2xl lg:border lg:border-gray-700/50">
     <div class="flex items-center justify-between px-4 lg:px-8 h-16 lg:h-20">
-      <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 lg:gap-3">
+      <a href="/ class="flex items-center gap-2 lg:gap-3">
         <img src="/images/mb_logo.png" alt="ETERNIA" class="h-8 lg:hidden w-auto" />
         <img src="/images/logo.png" alt="ETERNIA" class="hidden lg:block h-8 w-auto" />
       </a>
       
-      <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center gap-8">
         <a href="#products" class="text-sm text-white hover:text-gray-300 transition-colors flex items-center gap-1">
           Products
@@ -29,12 +27,9 @@
         <a href="#help" class="text-sm text-white hover:text-gray-300 transition-colors">Help</a>
       </div>
       
-      <!-- Right side -->
       <div class="flex items-center gap-3 lg:gap-4">
-        <!-- Aditya Birla Logo (Mobile) -->
         <img src="/images/aditya.png" alt="Aditya Birla Group" class="h-10 lg:hidden" />
         
-        <!-- CTA Button (Desktop) -->
         <button class="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 bg-white text-gray-900 rounded-lg font-medium text-sm transition-all duration-300 hover:bg-gray-100">
           Book a Consultation
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,7 +37,6 @@
           </svg>
         </button>
         
-        <!-- Mobile Menu Button -->
         <button 
           id="mobile-menu-btn"
           class="lg:hidden p-1.5"
@@ -55,7 +49,6 @@
   </div>
 </nav>
 
-<!-- Mobile Menu -->
 <div 
   id="mobile-menu" 
   class="lg:hidden fixed inset-0 bg-gray-900 z-[60] transform translate-x-full transition-transform duration-300"
@@ -105,7 +98,6 @@
     mobileMenu?.classList.add('translate-x-full');
   });
   
-  // Close mobile menu when clicking on a link
   const mobileLinks = mobileMenu?.querySelectorAll('a');
   mobileLinks?.forEach(link => {
     link.addEventListener('click', () => {
@@ -113,7 +105,6 @@
     });
   });
   
-  // Handle scroll for navbar background
   window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) {

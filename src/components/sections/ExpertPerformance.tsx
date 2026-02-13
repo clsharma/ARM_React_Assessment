@@ -35,7 +35,6 @@ const expertGroups = [
       profile: '/images/image5.png',
     },
   ],
-  // Add more groups as needed
 ];
 
 export default function ExpertPerformance() {
@@ -61,7 +60,6 @@ export default function ExpertPerformance() {
   return (
     <section className="section-padding bg-[#E6F4FA]">
       <div className="container-custom">
-        {/* Title with underline */}
         <div className="flex flex-col items-center mb-12 lg:mb-24">
           <h2 className="text-2xl md:text-4xl lg:text-[40px] font-normal text-[#003946] mb-3 md:mb-4 leading-tight tracking-wide" style={{ fontFamily: 'SF Pro, Inter, sans-serif' }}>
             Expert-Approved <br className="md:hidden" /> Performance
@@ -69,7 +67,6 @@ export default function ExpertPerformance() {
           <div className="w-48 md:w-[420px] h-[1.5px] bg-[#003946] mx-auto"></div>
         </div>
         
-        {/* Desktop Cascading View */}
         <div className="hidden lg:block relative">
           <div className="relative h-[500px] flex items-center justify-center perspective-[2000px]">
             {expertGroups[currentGroup].map((expert, index) => {
@@ -77,11 +74,10 @@ export default function ExpertPerformance() {
               const centerIndex = Math.floor(totalCards / 2);
               const offset = index - centerIndex;
               
-              // Calculate position and rotation
-              const translateX = offset * 200; // Horizontal spacing
-              const translateZ = Math.abs(offset) * -100; // Depth
-              const rotateY = offset * 8; // Rotation angle
-              const scale = 1 - Math.abs(offset) * 0.1; // Scale effect
+              const translateX = offset * 200;
+              const translateZ = Math.abs(offset) * -100;
+              const rotateY = offset * 8;
+              const scale = 1 - Math.abs(offset) * 0.1;
               const zIndex = totalCards - Math.abs(offset);
               
               return (
@@ -95,7 +91,7 @@ export default function ExpertPerformance() {
                   }}
                 >
                   <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300">
-                    {/* Thumbnail */}
+
                     <img 
                       src={expert.thumbnail} 
                       alt={expert.name}
@@ -108,9 +104,7 @@ export default function ExpertPerformance() {
             })}
           </div>
           
-          {/* Navigation controls */}
           <div className="flex items-center justify-center gap-6 mt-12">
-            {/* Left arrow */}
             <button
               onClick={prevGroup}
               className="w-12 h-12 bg-[#0A3D3D] rounded-full flex items-center justify-center hover:bg-[#174545] transition-colors shadow-lg"
@@ -119,7 +113,6 @@ export default function ExpertPerformance() {
               <img src="/images/arrow-left.png" alt="Previous" className="w-5 h-5" />
             </button>
             
-            {/* Dots */}
             <div className="flex gap-3">
               {expertGroups.map((_, index) => (
                 <button
@@ -133,7 +126,6 @@ export default function ExpertPerformance() {
               ))}
             </div>
             
-            {/* Right arrow */}
             <button
               onClick={nextGroup}
               className="w-12 h-12 bg-[#0A3D3D] rounded-full flex items-center justify-center hover:bg-[#174545] transition-colors shadow-lg"
@@ -144,15 +136,12 @@ export default function ExpertPerformance() {
           </div>
         </div>
         
-        {/* Mobile/Tablet View */}
         <div className="lg:hidden">
           <div className="relative mx-auto overflow-hidden" style={{ maxWidth: '420px' }}>
-            {/* Stacked Cards */}
             <div className="relative flex items-center justify-center" style={{ height: '480px' }}>
               {expertGroups[0].map((expert, index) => {
                 const total = expertGroups[0].length;
                 const diff = index - currentMobileIndex;
-                // Normalize for wrap-around
                 let offset = diff;
                 if (offset > Math.floor(total / 2)) offset -= total;
                 if (offset < -Math.floor(total / 2)) offset += total;
@@ -177,14 +166,12 @@ export default function ExpertPerformance() {
                     }}
                   >
                     <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
-                      {/* Thumbnail */}
                       <img 
                         src={expert.thumbnail} 
                         alt={expert.name}
                         className="w-full h-full object-cover"
                       />
                       
-                      {/* Gradient overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                       
     
@@ -197,7 +184,7 @@ export default function ExpertPerformance() {
             </div>
           </div>
           
-          {/* Mobile Navigation */}
+          
           <div className="flex items-center justify-center gap-4 mt-10">
             <button
               onClick={prevMobile}

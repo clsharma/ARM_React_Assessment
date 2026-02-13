@@ -96,12 +96,12 @@ npm run preview
 
 ```json
 {
-  "dev": "astro dev",              // Start development server
-  "start": "astro dev",            // Alias for dev
-  "build": "astro check && astro build",  // Type check and build
-  "preview": "astro preview",      // Preview production build
-  "lint": "eslint .",              // Run ESLint
-  "format": "prettier --write ."   // Format code with Prettier
+  "dev": "astro dev",
+  "start": "astro dev",
+  "build": "astro check && astro build",
+  "preview": "astro preview",
+  "lint": "eslint .",
+  "format": "prettier --write ."
 }
 ```
 

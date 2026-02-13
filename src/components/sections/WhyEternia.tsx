@@ -66,7 +66,6 @@ export default function WhyEternia() {
       }}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Title */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <h2 className="text-3xl md:text-4xl lg:text-[48px] font-light tracking-wide mb-4">
             Why Choose Eternia
@@ -74,7 +73,6 @@ export default function WhyEternia() {
           <div className="w-48 md:w-[500px] h-[1.5px] bg-white mx-auto"></div>
         </div>
         
-        {/* Desktop Grid View */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
           {features.map((feature) => (
             <div
@@ -84,15 +82,12 @@ export default function WhyEternia() {
                 background: 'linear-gradient(160deg, rgba(0,200,180,0.6) 0%, rgba(0,80,80,0.3) 30%, rgba(0,40,50,0.2) 60%, rgba(0,180,160,0.4) 100%)',
               }}
             >
-              {/* Inner card */}
               <div className="bg-[#0a2a30] rounded-2xl p-6 lg:p-3 h-full relative overflow-hidden">
-                {/* Subtle inner glow */}
                 <div className="absolute inset-0 rounded-2xl" style={{
                   background: 'radial-gradient(ellipse at top left, rgba(0,180,160,0.08) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(0,180,160,0.05) 0%, transparent 50%)',
                 }} />
                 
                 <div className="relative z-10">
-                  {/* Icon */}
                   <div>
                     <img 
                       src={feature.icon} 
@@ -101,17 +96,14 @@ export default function WhyEternia() {
                     />
                   </div>
                   
-                  {/* Subtitle */}
                   <p className="text-lg lg:text-xl font-medium mb-8 lg:mb-5 mt-[-40px] text-white leading-relaxed tracking-wide">
                     {feature.subtitle}
                   </p>
 
-                  {/* Gradient Line */}
                   <div className="w-full h-[0.5px] mb-8 lg:mb-10" style={{
                     background: 'linear-gradient(90deg, #0E3745 0%, #B1B1B1 50%, #0E3745 100%)'
                   }} />
                   
-                  {/* Benefits */}
                   <ul className="space-y-5">
                     {feature.benefits.map((benefit, index) => (
                       <li key={index} className="flex items-start gap-3">
@@ -140,7 +132,6 @@ export default function WhyEternia() {
           ))}
         </div>
         
-        {/* Mobile Carousel View */}
         <div className="md:hidden relative">
           <div className="overflow-hidden">
             <div 
@@ -156,13 +147,11 @@ export default function WhyEternia() {
                     }}
                   >
                     <div className="bg-[#0a2a30] rounded-2xl p-8 relative overflow-hidden">
-                      {/* Subtle inner glow */}
                       <div className="absolute inset-0 rounded-2xl" style={{
                         background: 'radial-gradient(ellipse at top left, rgba(0,180,160,0.08) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(0,180,160,0.05) 0%, transparent 50%)',
                       }} />
                       
                       <div className="relative z-10">
-                        {/* Icon */}
                         <div className="mb-8">
                           <img 
                             src={feature.icon} 
@@ -171,17 +160,14 @@ export default function WhyEternia() {
                           />
                         </div>
                         
-                        {/* Subtitle */}
                         <p className="text-xl font-medium mb-8 text-white leading-relaxed tracking-wide">
                           {feature.subtitle}
                         </p>
                         
-                        {/* Gradient Line */}
                         <div className="w-full h-[0.5px] mb-8" style={{
                           background: 'linear-gradient(90deg, #0E3745 0%, #B1B1B1 50%, #0E3745 100%)'
                         }} />
                         
-                        {/* Benefits */}
                         <ul className="space-y-5">
                           {feature.benefits.map((benefit, index) => (
                             <li key={index} className="flex items-start gap-3">
@@ -212,7 +198,6 @@ export default function WhyEternia() {
             </div>
           </div>
           
-          {/* Dots */}
           <div className="flex justify-center gap-2.5 mt-10">
             {features.map((_, index) => (
               <button

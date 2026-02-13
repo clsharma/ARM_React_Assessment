@@ -50,7 +50,6 @@ export default function DesignFeatures() {
   return (
     <section className="section-padding" style={{ backgroundColor: '#E6F4FA' }}>
       <div className="container-custom">
-        {/* Title */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-normal text-gray-900 mb-3">
             Design. Performance. Longevity.
@@ -58,7 +57,6 @@ export default function DesignFeatures() {
           <div className="w-80 mt-6 h-[1.5px] bg-gray-400 mx-auto"></div>
         </div>
         
-        {/* Desktop Grid View */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {features.map((feature) => (
             <div
@@ -83,7 +81,6 @@ export default function DesignFeatures() {
           ))}
         </div>
         
-        {/* Desktop Navigation */}
         <div className="hidden md:flex justify-center items-center gap-4 mt-8">
           <button
             onClick={prevSlide}
@@ -115,7 +112,6 @@ export default function DesignFeatures() {
           </button>
         </div>
         
-        {/* Mobile Grid View (2x2) */}
         <div className="md:hidden grid grid-cols-2 gap-4 mb-8">
           {features.map((feature) => (
             <div
@@ -139,7 +135,6 @@ export default function DesignFeatures() {
           ))}
         </div>
         
-        {/* Mobile Navigation */}
         <div className="md:hidden flex justify-center items-center gap-3">
           <button
             onClick={prevSlide}

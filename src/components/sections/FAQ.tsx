@@ -72,13 +72,12 @@ export default function FAQ() {
           <div className="w-64 md:w-[450px] h-[1.5px] bg-white mx-auto mb-14"></div>
         </div>
 
-        {/* FAQ Items */}
         <div>
           {faqs.map((faq, index) => {
             const isOpen = openId === faq.id;
             return (
               <div key={faq.id}>
-                {/* Top border for first item, bottom border for all */}
+
                 {index === 0 && (
                   <div
                     style={{
@@ -123,7 +122,6 @@ export default function FAQ() {
                     </span>
                   </button>
 
-                  {/* Answer */}
                   <div
                     style={{
                       maxHeight: isOpen ? '600px' : '0',

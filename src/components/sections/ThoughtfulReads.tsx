@@ -8,17 +8,13 @@ const articles = [
 export default function ThoughtfulReads() {
   return (
     <section className="relative w-full">
-      {/* Top half - image background */}
       <div
         className="absolute top-0 left-0 w-full h-1/2 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/image6.png')" }}
       />
-      {/* Bottom half - teal background */}
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-[#003946]" />
 
-      {/* Content */}
       <div className="relative z-10 max-w-[1280px] mx-auto lg:px-8 pt-10 pb-10 lg:pt-16 lg:pb-16">
-        {/* Heading */}
         <div className="absolute inset-0"></div>
         <div className="container-custom relative z-10">
           <div className="flex flex-col items-center">
@@ -29,7 +25,6 @@ export default function ThoughtfulReads() {
           </div>
         </div>
 
-        {/* Mobile: Horizontal scroll carousel */}
         <div className="lg:hidden flex gap-4 overflow-x-auto scrollbar-hide px-[12%] sm:px-[12%] mb-8 snap-x snap-mandatory">
           {articles.map((article) => (
             <a
@@ -46,7 +41,6 @@ export default function ThoughtfulReads() {
           ))}
         </div>
 
-        {/* Desktop: 4-column grid */}
         <div className="hidden lg:grid lg:grid-cols-4 gap-5 mb-12">
           {articles.map((article) => (
             <a
@@ -63,7 +57,6 @@ export default function ThoughtfulReads() {
           ))}
         </div>
 
-        {/* View All / Explore More button */}
         <div className="text-center">
           <a
             href="#"
