@@ -1,34 +1,21 @@
 import { useState } from 'react';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const projects = [
   {
     id: 1,
-    name: 'Runwal Nirwana',
-    description: '54 Storey Luxury Tower',
-    location: 'Mumbai',
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80'
+    image: '/images/image13.png',
   },
   {
     id: 2,
-    name: 'Rustomjee Reserve',
-    description: '22 Storey High Rise Tower',
-    location: 'Thane',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80'
+    image: '/images/image14.png',
   },
   {
     id: 3,
-    name: 'L&T Seawoods',
-    description: '40 acre Development',
-    location: 'Navi Mumbai',
-    image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&q=80'
+    image: '/images/image15.png',
   },
   {
     id: 4,
-    name: 'Birla Vanya',
-    description: '33 Storey Tower',
-    location: 'Kalyan',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80'
+    image: '/images/image16.png',
   }
 ];
 
@@ -44,89 +31,90 @@ export default function ProjectsGallery() {
   };
   
   return (
-    <section className="section-padding bg-primary text-white overflow-hidden">
-      <div className="container-custom">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12">
-          Crafted for Iconic Spaces
-        </h2>
-        
-        {/* Desktop Horizontal Scroll */}
-        <div className="hidden md:flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="flex-shrink-0 w-80 bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden border border-white/20 hover:scale-105 transition-transform duration-300"
-            >
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.name}</h3>
-                <p className="text-sm text-gray-300 mb-1">{project.description}</p>
-                <p className="text-sm text-gray-400">{project.location}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        {/* Mobile Carousel */}
-        <div className="md:hidden relative">
-          <div className="overflow-hidden">
-            <div 
-              className="flex transition-transform duration-500 ease-out"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {projects.map((project) => (
-                <div key={project.id} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden border border-white/20">
-                    <div className="h-48 overflow-hidden">
-                      <img 
-                        src={project.image} 
-                        alt={project.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold mb-2">{project.name}</h3>
-                      <p className="text-sm text-gray-300 mb-1">{project.description}</p>
-                      <p className="text-sm text-gray-400">{project.location}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+    <section className="relative overflow-hidden">
+      {/* Top Section with image6.png background */}
+      <div 
+        className="relative pt-16 pb-48 bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/image6.png')" }}
+      >
+        <div className="absolute inset-0"></div>
+        <div className="container-custom relative z-10">
+          <div className="flex flex-col items-center">
+            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-normal text-[#003946] mb-3 md:mb-4 leading-tight tracking-wide mt-[-30px]" style={{ fontFamily: 'SF Pro, Inter, sans-serif' }}>
+              Crafted or<br className="md:hidden" /> Iconic Spaces
+            </h2>
+            <div className="w-32 md:w-[420px] h-[1.5px] bg-[#003946] mx-auto"></div>
           </div>
-          
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white/20 rounded-full p-3 shadow-lg hover:bg-white/30 transition-colors"
-            aria-label="Previous slide"
-          >
-            <FaArrowLeft className="text-white" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white/20 rounded-full p-3 shadow-lg hover:bg-white/30 transition-colors"
-            aria-label="Next slide"
-          >
-            <FaArrowRight className="text-white" />
-          </button>
-          
-          <div className="flex justify-center gap-2 mt-6">
-            {projects.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  currentSlide === index ? 'bg-white w-8' : 'bg-white/50'
+        </div>
+      </div>
+
+      {/* Bottom Section with #003946 background */}
+      <div className="relative pt-48 pb-20 md:pb-16" style={{ backgroundColor: '#003946' }}>
+        {/* Cards positioned to overlap both backgrounds */}
+        <div className="absolute left-0 right-0 -top-40 z-20 pb-16 md:pb-0">
+          <div className="container-custom">
+            {/* Desktop View */}
+            <div className="hidden md:block">
+              <div className="grid md:grid-cols-4 gap-6 px-4 mb-8">
+                {projects.map((project) => (
+                  <div key={project.id} className="rounded-lg overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt='Project'
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+              
+              {/* Desktop Navigation Arrows */}
+              <div className="flex justify-center items-center gap-4">
+                <button
+                  onClick={prevSlide}
+                  className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors"
+                  aria-label="Previous slide"
+                >
+                  <img src="/images/left1.png" alt="Previous" className="w-5 h-5" />
+                </button>
+                
+                {/* Dots for Desktop */}
+                <div className="flex gap-2">
+                  {projects.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`h-2 rounded-full transition-all ${
+                  currentSlide === index ? 'bg-white w-2' : 'bg-transparent border border-white w-2'
                 }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+                
+                <button
+                  onClick={nextSlide}
+                  className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors"
+                  aria-label="Next slide"
+                >
+                  <img src="/images/right1.png" alt="Next" className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Mobile Horizontal Scroll */}
+            <div className="md:hidden overflow-x-auto px-4 scrollbar-hide">
+              <div className="flex gap-4 pb-4">
+                {projects.map((project) => (
+                  <div key={project.id} className="flex-shrink-0 w-64 rounded-lg overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt='Project'
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -5,26 +5,22 @@ const testimonials = [
   {
     id: 1,
     name: 'Mr. Vinod Mittal',
-    quote: 'Eternia windows have transformed our home. The quality is exceptional, and the noise reduction is remarkable. We can finally enjoy peace and quiet despite living on a busy street.',
-    location: 'Mumbai'
+    quote: 'Eternia is a good product and very attractive in design and also durable and is supplemented with brand image and trust of Aditya Birla Group. Absolute windows, Gurgoan is very hard working and nice person.',
   },
   {
     id: 2,
-    name: 'Mrs. Priya Sharma',
-    quote: 'The sleek design and energy efficiency of Eternia windows are unmatched. Our electricity bills have reduced significantly, and the windows look absolutely stunning.',
-    location: 'Delhi'
+    name: 'Mr. Vinod Mittal',
+    quote: 'Eternia is a good product and very attractive in design and also durable and is supplemented with brand image and trust of Aditya Birla Group. Absolute windows, Gurgoan is very hard working and nice person.',
   },
   {
     id: 3,
-    name: 'Mr. Rajesh Kumar',
-    quote: 'Installation was smooth, and the after-sales service is excellent. The Eternia Care team is always available to address any concerns. Highly recommended!',
-    location: 'Bangalore'
+    name: 'Mr. Vinod Mittal',
+    quote: 'Eternia is a good product and very attractive in design and also durable and is supplemented with brand image and trust of Aditya Birla Group. Absolute windows, Gurgoan is very hard working and nice person.',
   },
   {
     id: 4,
-    name: 'Ms. Anita Desai',
-    quote: 'The WIWAG certification gave us confidence in the quality. After two years, the windows still look and function like new. Worth every penny.',
-    location: 'Pune'
+    name: 'Mr. Vinod Mittal',
+    quote: 'Eternia is a good product and very attractive in design and also durable and is supplemented with brand image and trust of Aditya Birla Group. Absolute windows, Gurgoan is very hard working and nice person.',
   }
 ];
 
@@ -40,30 +36,50 @@ export default function Testimonials() {
   };
   
   return (
-    <section className="section-padding bg-primary text-white">
+    <section className="section-padding text-white relative overflow-hidden" style={{ backgroundColor: '#003946' }}>
       <div className="container-custom">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12">
-          What Our Customers Have to Say
-        </h2>
-        
-        {/* Desktop Grid View */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300"
-            >
-              <FaQuoteLeft className="text-3xl mb-4 text-white/70" />
-              <p className="text-sm mb-4 leading-relaxed text-gray-200">{testimonial.quote}</p>
-              <div className="pt-4 border-t border-white/20">
-                <p className="font-bold">{testimonial.name}</p>
-                <p className="text-sm text-gray-300">{testimonial.location}</p>
-              </div>
-            </div>
-          ))}
+        <div className="flex flex-col items-center mb-12">
+          <h2 className="text-3xl md:text-3xl lg:text-4xl font-normal text-white mb-3 md:mb-4 leading-tight tracking-wide" style={{ fontFamily: 'SF Pro, Inter, sans-serif' }}>
+            What Our Customers<br className="md:hidden" /> Have to Say
+          </h2>
+          <div className="w-72 md:w-[420px] h-[1.5px] bg-white mx-auto"></div>
         </div>
         
-        {/* Mobile Carousel View */}
+        {/* Desktop Carousel - with peek effect */}
+        <div className="hidden md:block relative mb-8">
+          <div className="overflow-hidden mx-auto" style={{ maxWidth: '1200px' }}>
+            <div 
+              className="flex transition-transform duration-500 ease-out gap-6"
+              style={{ 
+                transform: `translateX(calc(-${currentSlide * 25}% - ${currentSlide * 1.5}rem))`,
+              }}
+            >
+              {testimonials.map((testimonial) => (
+                <div
+                  key={testimonial.id}
+                  className="flex-shrink-0"
+                  style={{ width: 'calc(25% - 1.125rem)' }}
+                >
+                  <div 
+                    className="rounded-lg p-6 border border-white/20 h-full"
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)',
+                      backdropFilter: 'blur(10px)'
+                    }}
+                  >
+                    <FaQuoteLeft className="text-4xl mb-4 text-white/70" />
+                    <p className="text-sm mb-6 leading-relaxed text-gray-200">{testimonial.quote}</p>
+                    <div className="pt-4 border-t border-white/20">
+                      <p className="font-bold">{testimonial.name}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        
+        {/* Mobile Carousel - single card */}
         <div className="md:hidden relative mb-8">
           <div className="overflow-hidden">
             <div 
@@ -72,53 +88,61 @@ export default function Testimonials() {
             >
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                    <FaQuoteLeft className="text-3xl mb-4 text-white/70" />
-                    <p className="text-sm mb-4 leading-relaxed text-gray-200">{testimonial.quote}</p>
+                  <div 
+                    className="rounded-lg p-6 border border-white/20"
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)',
+                      backdropFilter: 'blur(10px)'
+                    }}
+                  >
+                    <FaQuoteLeft className="text-4xl mb-4 text-white/70" />
+                    <p className="text-sm mb-6 leading-relaxed text-gray-200">{testimonial.quote}</p>
                     <div className="pt-4 border-t border-white/20">
                       <p className="font-bold">{testimonial.name}</p>
-                      <p className="text-sm text-gray-300">{testimonial.location}</p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          
-          {/* Navigation Arrows */}
+        </div>
+        
+        {/* Navigation Controls */}
+        <div className="flex items-center justify-center gap-4 mb-8">
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white/20 rounded-full p-3 shadow-lg hover:bg-white/30 transition-colors"
+            className="bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:opacity-90 transition-opacity"
             aria-label="Previous slide"
           >
-            <FaArrowLeft className="text-white" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white/20 rounded-full p-3 shadow-lg hover:bg-white/30 transition-colors"
-            aria-label="Next slide"
-          >
-            <FaArrowRight className="text-white" />
+            <img src="/images/left1.png" alt="Previous" className="w-5 h-5" />
           </button>
           
           {/* Dots */}
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex gap-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  currentSlide === index ? 'bg-white w-8' : 'bg-white/50'
+                className={`h-2 rounded-full transition-all ${
+                  currentSlide === index ? 'bg-white w-2' : 'bg-transparent border border-white w-2'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
+          
+          <button
+            onClick={nextSlide}
+            className="bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:opacity-90 transition-opacity"
+            aria-label="Next slide"
+          >
+            <img src="/images/right1.png" alt="Next" className="w-5 h-5" />
+          </button>
         </div>
         
         <div className="text-center">
           <a href="#explore" className="text-white hover:text-gray-200 underline font-semibold">
-            Explore More Reviews
+            Explore More
           </a>
         </div>
       </div>

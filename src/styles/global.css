@@ -36,4 +36,22 @@
   .btn-secondary {
     @apply inline-flex items-center justify-center px-6 py-3 border-2 border-primary text-primary bg-transparent rounded-lg font-semibold transition-all duration-300 hover:bg-primary hover:text-white;
   }
+  
+  .perspective-\[2000px\] {
+    perspective: 2000px;
+  }
+}
+
+@layer utilities {
+  .shadow-3xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }

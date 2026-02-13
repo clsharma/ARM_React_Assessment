@@ -1,57 +1,44 @@
 import { useState } from 'react';
-import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaCertificate, FaLeaf, FaHandshake } from 'react-icons/fa';
 
 const features = [
   {
     id: 1,
-    icon: FaCheckCircle,
-    title: 'DURALUμ',
+    icon: '/images/image9.png',
     subtitle: 'Stronger. Sleeker. Smarter.',
-    description: 'Our proprietary aluminium alloy engineered for superior strength and durability',
     benefits: [
-      'High tensile strength',
-      'Corrosion resistant',
-      'Slim profiles',
-      'Low maintenance'
+      'Patented alloy, 40% stronger than standard aluminium.',
+      'Enables larger windows with slimmer profiles.',
+      'Cyclone-tested for extreme durability & reliability.'
     ]
   },
   {
     id: 2,
-    icon: FaCertificate,
-    title: 'WIWAG',
-    subtitle: 'Tested. Trusted. Everlasting.',
-    description: 'German-engineered quality certification ensuring world-class performance',
+    icon: '/images/image10.png',
+    subtitle: 'Tested. Trusted. Strong.',
     benefits: [
-      'Global standards',
-      'Rigorous testing',
-      'Quality assurance',
-      'Performance guaranteed'
+      'Windows tested for wind, water, and air performance.',
+      'Leak-proof, rattle-free & weather-resistant Windows.',
+      'Transparent scoring system for consumer confidence.'
     ]
   },
   {
     id: 3,
-    icon: FaHandshake,
-    title: 'ETERNIA CARE',
+    icon: '/images/image11.png',
     subtitle: 'Assured Service Guarantee',
-    description: 'Comprehensive support and service throughout your window\'s lifetime',
     benefits: [
-      '10-year warranty',
-      '24/7 support',
-      'Expert installation',
-      'Regular maintenance'
+      '12-Year Warranty',
+      'Dedicated 7-Day Call Center for support.',
+      'Rigorous post-installation checks for complete satisfaction.'
     ]
   },
   {
     id: 4,
-    icon: FaLeaf,
-    title: 'SUSTAINABILITY',
+    icon: '/images/image12.png',
     subtitle: 'Greener Homes Promise',
-    description: 'Eco-friendly materials and processes for a sustainable future',
     benefits: [
-      '100% recyclable',
-      'Energy efficient',
-      'Low carbon footprint',
-      'Sustainable sourcing'
+      'Aluminium – the world\'s only eternally recyclable material.',
+      'GreenPro Certified products for a greener future.',
+      'Sustainable production processes for eco-conscious living.'
     ]
   }
 ];
@@ -68,33 +55,87 @@ export default function WhyEternia() {
   };
   
   return (
-    <section className="section-padding bg-primary text-white">
-      <div className="container-custom">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16">
-          Why Choose Eternia
-        </h2>
+    <section 
+      className="py-16 md:py-20 lg:py-24 text-white relative"
+      style={{
+        backgroundImage: 'linear-gradient(rgba(2, 48, 61, 0.95), rgba(2, 48, 61, 0.95)), url(/images/bg-img.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#02303D'
+      }}
+    >
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Title */}
+        <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <h2 className="text-3xl md:text-4xl lg:text-[48px] font-light tracking-wide mb-4">
+            Why Choose Eternia
+          </h2>
+          <div className="w-48 md:w-[500px] h-[1.5px] bg-white mx-auto"></div>
+        </div>
         
         {/* Desktop Grid View */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all duration-300 border border-white/20"
+              className="relative rounded-2xl p-[1.5px] transition-all duration-300"
+              style={{
+                background: 'linear-gradient(160deg, rgba(0,200,180,0.6) 0%, rgba(0,80,80,0.3) 30%, rgba(0,40,50,0.2) 60%, rgba(0,180,160,0.4) 100%)',
+              }}
             >
-              <feature.icon className="text-4xl mb-4 text-white" />
-              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-              <p className="text-sm font-semibold mb-3 text-gray-200">{feature.subtitle}</p>
-              <p className="text-sm mb-4 leading-relaxed text-gray-300">{feature.description}</p>
-              <ul className="space-y-2">
-                {feature.benefits.map((benefit, index) => (
-                  <li key={index} className="text-sm flex items-start gap-2">
-                    <svg className="w-4 h-4 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
+              {/* Inner card */}
+              <div className="bg-[#0a2a30] rounded-2xl p-6 lg:p-3 h-full relative overflow-hidden">
+                {/* Subtle inner glow */}
+                <div className="absolute inset-0 rounded-2xl" style={{
+                  background: 'radial-gradient(ellipse at top left, rgba(0,180,160,0.08) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(0,180,160,0.05) 0%, transparent 50%)',
+                }} />
+                
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <div>
+                    <img 
+                      src={feature.icon} 
+                      alt={feature.subtitle}
+                      className="w-16 h-16 lg:w-40 lg:h-40 object-contain mt-[-50px]"
+                    />
+                  </div>
+                  
+                  {/* Subtitle */}
+                  <p className="text-lg lg:text-xl font-medium mb-8 lg:mb-5 mt-[-40px] text-white leading-relaxed tracking-wide">
+                    {feature.subtitle}
+                  </p>
+
+                  {/* Gradient Line */}
+                  <div className="w-full h-[0.5px] mb-8 lg:mb-10" style={{
+                    background: 'linear-gradient(90deg, #0E3745 0%, #B1B1B1 50%, #0E3745 100%)'
+                  }} />
+                  
+                  {/* Benefits */}
+                  <ul className="space-y-5">
+                    {feature.benefits.map((benefit, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <div 
+                          className="flex-shrink-0 w-5 h-5 rounded-[5px] flex items-center justify-center mt-0.5"
+                          style={{
+                            backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                            border: '0.5px solid rgba(255, 255, 255, 0.25)',
+                          }}
+                        >
+                          <img 
+                            src="/images/checkbox.png" 
+                            alt="checkmark"
+                            className="w-2.5 h-2.5 object-contain"
+                          />
+                        </div>
+                        <span className="text-sm lg:text-[15px] leading-relaxed text-white/90">
+                          {benefit}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -107,52 +148,78 @@ export default function WhyEternia() {
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {features.map((feature) => (
-                <div key={feature.id} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                    <feature.icon className="text-4xl mb-4 text-white" />
-                    <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                    <p className="text-sm font-semibold mb-3 text-gray-200">{feature.subtitle}</p>
-                    <p className="text-sm mb-4 leading-relaxed text-gray-300">{feature.description}</p>
-                    <ul className="space-y-2">
-                      {feature.benefits.map((benefit, index) => (
-                        <li key={index} className="text-sm flex items-start gap-2">
-                          <svg className="w-4 h-4 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                          <span>{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
+                <div key={feature.id} className="w-full flex-shrink-0 px-2">
+                  <div
+                    className="relative rounded-2xl p-[1.5px]"
+                    style={{
+                      background: 'linear-gradient(160deg, rgba(0,200,180,0.6) 0%, rgba(0,80,80,0.3) 30%, rgba(0,40,50,0.2) 60%, rgba(0,180,160,0.4) 100%)',
+                    }}
+                  >
+                    <div className="bg-[#0a2a30] rounded-2xl p-8 relative overflow-hidden">
+                      {/* Subtle inner glow */}
+                      <div className="absolute inset-0 rounded-2xl" style={{
+                        background: 'radial-gradient(ellipse at top left, rgba(0,180,160,0.08) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(0,180,160,0.05) 0%, transparent 50%)',
+                      }} />
+                      
+                      <div className="relative z-10">
+                        {/* Icon */}
+                        <div className="mb-8">
+                          <img 
+                            src={feature.icon} 
+                            alt={feature.subtitle}
+                            className="w-16 h-16 object-contain"
+                          />
+                        </div>
+                        
+                        {/* Subtitle */}
+                        <p className="text-xl font-medium mb-8 text-white leading-relaxed tracking-wide">
+                          {feature.subtitle}
+                        </p>
+                        
+                        {/* Gradient Line */}
+                        <div className="w-full h-[0.5px] mb-8" style={{
+                          background: 'linear-gradient(90deg, #0E3745 0%, #B1B1B1 50%, #0E3745 100%)'
+                        }} />
+                        
+                        {/* Benefits */}
+                        <ul className="space-y-5">
+                          {feature.benefits.map((benefit, index) => (
+                            <li key={index} className="flex items-start gap-3">
+                              <div 
+                                className="flex-shrink-0 w-5 h-5 rounded-[5px] flex items-center justify-center mt-0.5"
+                                style={{
+                                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                                  border: '0.5px solid rgba(255, 255, 255, 0.25)',
+                                }}
+                              >
+                                <img 
+                                  src="/images/checkbox.png" 
+                                  alt="checkmark"
+                                  className="w-2.5 h-2.5 object-contain"
+                                />
+                              </div>
+                              <span className="text-[16px] leading-relaxed text-white/90">
+                                {benefit}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
           
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white/20 rounded-full p-3 shadow-lg hover:bg-white/30 transition-colors"
-            aria-label="Previous slide"
-          >
-            <FaArrowLeft className="text-white" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white/20 rounded-full p-3 shadow-lg hover:bg-white/30 transition-colors"
-            aria-label="Next slide"
-          >
-            <FaArrowRight className="text-white" />
-          </button>
-          
           {/* Dots */}
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex justify-center gap-2.5 mt-10">
             {features.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  currentSlide === index ? 'bg-white w-8' : 'bg-white/50'
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  currentSlide === index ? 'bg-white w-10' : 'bg-white/40 w-2.5'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

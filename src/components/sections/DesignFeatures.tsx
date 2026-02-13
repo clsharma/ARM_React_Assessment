@@ -1,37 +1,37 @@
 import { useState } from 'react';
-import { FaArrowLeft, FaArrowRight, FaBolt, FaVolumeUp, FaCloudRain, FaWind } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const features = [
   {
     id: 1,
-    icon: FaBolt,
+    icon: '/images/image1.png',
     title: 'Energy Efficient',
-    description: 'Advanced thermal insulation that keeps your home comfortable year-round while reducing energy costs.',
-    color: 'bg-accent-blue',
+    description: 'Designed to enhance thermal performance while maintaining year-round indoor comfort.',
+    color: '#2BAAE1',
     link: '#energy-efficient'
   },
   {
     id: 2,
-    icon: FaVolumeUp,
+    icon: '/images/image2.png',
     title: 'Noise Insulation',
-    description: 'Superior sound dampening technology creates a peaceful indoor environment away from outside noise.',
-    color: 'bg-gray-100',
+    description: 'Carefully engineered to significantly reduce external noise and create serene living spaces.',
+    color: 'bg-white',
     link: '#noise-insulation'
   },
   {
     id: 3,
-    icon: FaCloudRain,
+    icon: '/images/image3.png',
     title: 'Rainwater Insulation',
-    description: 'Weatherproof sealing systems prevent water ingress during heavy monsoons and storms.',
-    color: 'bg-gray-100',
+    description: 'Precision sealing systems prevent water ingress, even during intense monsoon conditions.',
+    color: 'bg-white',
     link: '#rainwater-insulation'
   },
   {
     id: 4,
-    icon: FaWind,
+    icon: '/images/image4.png',
     title: 'Storm Resistant',
-    description: 'Engineered to withstand extreme weather conditions with reinforced frames and secure locking.',
-    color: 'bg-gray-100',
+    description: 'Tested to endure high wind loads and extreme weather with lasting reliable strength.',
+    color: 'bg-white',
     link: '#storm-resistant'
   }
 ];
@@ -48,92 +48,127 @@ export default function DesignFeatures() {
   };
   
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding" style={{ backgroundColor: '#E6F4FA' }}>
       <div className="container-custom">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12">
-          Design. Performance. Longevity.
-        </h2>
+        {/* Title */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-normal text-gray-900 mb-3">
+            Design. Performance. Longevity.
+          </h2>
+          <div className="w-80 mt-6 h-[1.5px] bg-gray-400 mx-auto"></div>
+        </div>
         
         {/* Desktop Grid View */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {features.map((feature) => (
             <div
               key={feature.id}
-              className={`${feature.color} ${feature.id === 1 ? 'text-white' : 'text-text-dark'} rounded-lg p-8 transition-transform duration-300 hover:scale-105 hover:shadow-lg`}
+              style={feature.id === 1 ? { backgroundColor: feature.color } : {}}
+              className={`${feature.id === 1 ? '' : feature.color} ${feature.id === 1 ? 'text-white' : 'text-gray-800'} rounded-xl p-8 transition-all duration-300 hover:shadow-xl border ${feature.id === 1 ? 'border-sky-400' : 'border-gray-300'} flex flex-col`}
             >
-              <feature.icon className="text-4xl mb-4" />
-              <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-sm mb-4 leading-relaxed opacity-90">{feature.description}</p>
-              <a 
-                href={feature.link} 
-                className={`text-sm font-semibold ${feature.id === 1 ? 'text-white' : 'text-primary'} hover:underline inline-flex items-center gap-2`}
-              >
-                Learn More
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                </svg>
-              </a>
+              <div className="flex justify-center mb-5">
+                <img src={feature.icon} alt={feature.title} className="w-16 h-16 object-contain" />
+              </div>
+              <h3 className="text-lg font-bold mb-3 text-center">{feature.title}</h3>
+              <p className="text-sm mb-5 leading-relaxed text-center flex-grow">{feature.description}</p>
+              <div className="text-center">
+                <a 
+                  href={feature.link} 
+                  className={`text-sm font-medium ${feature.id === 1 ? 'text-white underline' : 'text-teal-700 underline'} hover:no-underline`}
+                >
+                  Learn More
+                </a>
+              </div>
             </div>
           ))}
         </div>
         
-        {/* Mobile Carousel View */}
-        <div className="md:hidden relative">
-          <div className="overflow-hidden">
-            <div 
-              className="flex transition-transform duration-500 ease-out"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {features.map((feature) => (
-                <div key={feature.id} className="w-full flex-shrink-0 px-4">
-                  <div className={`${feature.color} ${feature.id === 1 ? 'text-white' : 'text-text-dark'} rounded-lg p-8`}>
-                    <feature.icon className="text-4xl mb-4" />
-                    <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                    <p className="text-sm mb-4 leading-relaxed opacity-90">{feature.description}</p>
-                    <a 
-                      href={feature.link} 
-                      className={`text-sm font-semibold ${feature.id === 1 ? 'text-white' : 'text-primary'} hover:underline inline-flex items-center gap-2`}
-                    >
-                      Learn More
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Navigation Arrows */}
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex justify-center items-center gap-4 mt-8">
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors"
+            disabled={currentSlide === 0}
+            className={`p-2 bg-white rounded-full shadow-md transition-colors border border-gray-200 ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-50'}`}
             aria-label="Previous slide"
           >
-            <FaArrowLeft className="text-primary" />
+            <FaArrowLeft className="text-gray-600 text-sm" />
           </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors"
-            aria-label="Next slide"
-          >
-            <FaArrowRight className="text-primary" />
-          </button>
-          
-          {/* Dots */}
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex gap-2">
             {features.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  currentSlide === index ? 'bg-primary w-8' : 'bg-gray-300'
+                className={`h-2 rounded-full transition-all ${
+                  currentSlide === index ? 'bg-gray-800 w-2' : 'bg-gray-300 w-2'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
+          <button
+            onClick={nextSlide}
+            disabled={currentSlide === features.length - 1}
+            className={`p-2 bg-white rounded-full shadow-md transition-colors border border-gray-200 ${currentSlide === features.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-50'}`}
+            aria-label="Next slide"
+          >
+            <FaArrowRight className="text-gray-600 text-sm" />
+          </button>
+        </div>
+        
+        {/* Mobile Grid View (2x2) */}
+        <div className="md:hidden grid grid-cols-2 gap-4 mb-8">
+          {features.map((feature) => (
+            <div
+              key={feature.id}
+              className={`${feature.color.startsWith('#') ? 'bg-white' : feature.color} text-gray-800 rounded-xl p-4 border border-gray-300 shadow-sm flex flex-col`}
+            >
+              <div className="flex justify-center mb-3">
+                <img src={feature.id === 1 ? '/images/image5.png' : feature.icon} alt={feature.title} className="w-12 h-12 object-contain" />
+              </div>
+              <h3 className="text-sm font-bold mb-2 text-center">{feature.title}</h3>
+              <p className="text-[10px] mb-3 leading-snug text-center flex-grow">{feature.description}</p>
+              <div className="text-center">
+                <a 
+                  href={feature.link} 
+                  className={`text-[10px] font-medium text-teal-700 underline hover:no-underline`}
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* Mobile Navigation */}
+        <div className="md:hidden flex justify-center items-center gap-3">
+          <button
+            onClick={prevSlide}
+            disabled={currentSlide === 0}
+            className={`p-1.5 bg-white rounded-full shadow-md transition-colors border border-gray-200 ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-50'}`}
+            aria-label="Previous slide"
+          >
+            <FaArrowLeft className="text-gray-500 text-xs" />
+          </button>
+          <div className="flex gap-2">
+            {features.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`h-1.5 rounded-full transition-all ${
+                  currentSlide === index ? 'bg-gray-800 w-1.5' : 'bg-gray-300 w-1.5'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+          <button
+            onClick={nextSlide}
+            disabled={currentSlide === features.length - 1}
+            className={`p-1.5 bg-white rounded-full shadow-md transition-colors border border-gray-200 ${currentSlide === features.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-50'}`}
+            aria-label="Next slide"
+          >
+            <FaArrowRight className="text-gray-500 text-xs" />
+          </button>
         </div>
       </div>
     </section>
